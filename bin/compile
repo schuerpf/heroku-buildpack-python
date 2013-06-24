@@ -205,7 +205,7 @@ if [ -d $TARGET_DIR/gettext ]; then
 fi
 
 echo "-----> Installing gettext..."
-curl --silent --max-time 60 --location "$GETTEXT_TARBALL" | tar xz
+curl $GETTEXT_TARBALL | tar xz
 echo "-----> done in $TARGET_DIR/gettext"
 
 deep-mv $BUILD_DIR $ORIG_BUILD_DIR
