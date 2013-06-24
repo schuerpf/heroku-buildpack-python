@@ -191,5 +191,24 @@ done
 
 # ### Fin.
 
+
+# Gettext Installation
+set -e
+
+GETTEXT_TARBALL=https://s3-eu-west-1.amazonaws.com/midgard-heroku/gettext.tar.gz
+TARGET_DIR=$HOME
+
+cd $BUILD_DIR
+
+if [ -d $TARGET_DIR/gettext ]; then
+	echo "$PWD/gettext already installed"
+fi
+
+echo "-----> Installing gettext..."
+curl --silent --max-time 60 --location "$GETTEXT_TARBALL" | tar xz
+echo "-----> done in $TARGET_DIR/gettext"
+
 deep-mv $BUILD_DIR $ORIG_BUILD_DIR
 deep-mv $TMP_APP_DIR $APP_DIR
+
+

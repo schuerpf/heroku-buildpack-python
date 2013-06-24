@@ -20,3 +20,5 @@ if [ ! -f $BUILD_DIR/requirements.txt ] && [ ! -f $BUILD_DIR/setup.py ]; then
 fi
 
 echo Python
+
+echo "Gettext library"
